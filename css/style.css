@@ -1,0 +1,39 @@
+.bookworm-logo-top {
+    height: 120px;
+    padding-left: 40px;
+}
+
+.headlines {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.nav-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul {
+    list-style-type: none;
+    padding-right: 40px;
+}
+
+nav a {
+    color: #faf4ad;
+}
+
+h1 {
+    font-size: 48px;
+    color: var(--text-color-blue);
+}
+
+h2 {
+    color: var(--text-color-blue);
+}
+
+footer {
+    background-color: var();
+}

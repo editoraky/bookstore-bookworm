@@ -1,0 +1,163 @@
+/* Global Styles */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    scroll-behavior: smooth;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Fonts */
+
+@font-face {
+  font-display: swap; 
+  font-family: 'Akatab';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/akatab-v9-latin-regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Akatab';
+  font-style: normal;
+  font-weight: 500;
+  src: url('../fonts/akatab-v9-latin-500.woff2') format('woff2');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Akatab';
+  font-style: normal;
+  font-weight: 600;
+  src: url('../fonts/akatab-v9-latin-600.woff2') format('woff2');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Akatab';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../fonts/akatab-v9-latin-700.woff2') format('woff2');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Akatab';
+  font-style: normal;
+  font-weight: 800;
+  src: url('../fonts/akatab-v9-latin-800.woff2') format('woff2');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Akatab';
+  font-style: normal;
+  font-weight: 900;
+  src: url('../fonts/akatab-v9-latin-900.woff2') format('woff2');
+}
+
+:root {
+    /* Farben in unserem Fotogram, mit Variablen arbeiten, damit Farben später einfacher angepasst werden können */
+
+    --primary-color: #337ab7; 
+    --text-color-black: #222222; 
+    --text-color-white: #ffffff;
+    --bg-color-main: #ECEFCA;
+    --bg-color-footer: #547792;
+    --bg-color-header: #547792;
+    --text-color-blue: #213448;
+
+    /* Schriftgrößen */
+
+    --base-font-size: 16px;  
+    --base-font-type: 'Akatab', sans-serif;
+}
+
+/* Typo & globale Einstellungen */
+
+body {
+    margin: 0;
+    font-family: var(--base-font-type);
+    font-size: var(--base-font-size); 
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    line-height: 1.6; /* Bessere Lesbarkeit */
+}
+
+main {
+  min-height: 100vh;
+}
+/* Header & Navigation */
+
+header {
+    background-color: var(--bg-color-header);
+    height: 128px;
+    width: 100%;    
+}
+
+.content-limitation {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+
+/* Footer Style */
+
+footer {
+    height: 136px;
+    width: 100%;
+    background-color: var(--bg-color-footer);
+}
+
+.social-media {
+    display: flex;
+    gap: 8px;
+    padding-right: 40px;
+    
+}
+
+.logo-social {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 136px;
+}
+
+.logo-bookstore {
+    height: 64px;
+    padding-left: 32px;
+}
+
+.social-media-logo {
+    height: 32px;
+}
+
+.imprint-link {
+    color: var(--text-color-white);
+    text-decoration: none;
+}
+
+.social-media-logo {
+    height: 32px;
+    /* transition: transform 0.3s ease; */
+}
+
+.social-media-logo:hover {
+    transform: scale(1.1);
+}
+
+.imprint-link {
+    color: var(--text-color-white);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.imprint-link:hover {
+    color: var(--primary-color);
+}
