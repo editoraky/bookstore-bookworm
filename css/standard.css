@@ -4,6 +4,12 @@
     box-sizing: border-box;
     margin: 0;
     scroll-behavior: smooth;
+    max-width: 100%;
+}
+
+html, body {
+  width: 100%;
+  /* overflow-x: hidden; */
 }
 
 a {
@@ -17,7 +23,7 @@ a {
   font-family: 'Akatab';
   font-style: normal;
   font-weight: 400;
-  src: url('../fonts/akatab-v9-latin-regular.woff2') format('woff2');
+  src: url('./assets/fonts/akatab-v9-latin-regular.woff2') format('woff2');
 }
 
 @font-face {
@@ -25,7 +31,7 @@ a {
   font-family: 'Akatab';
   font-style: normal;
   font-weight: 500;
-  src: url('../fonts/akatab-v9-latin-500.woff2') format('woff2');
+  src: url("./assets/fonts/akatab-v9-latin-500.woff2") format('woff2');
 }
 
 @font-face {
@@ -33,7 +39,7 @@ a {
   font-family: 'Akatab';
   font-style: normal;
   font-weight: 600;
-  src: url('../fonts/akatab-v9-latin-600.woff2') format('woff2');
+  src: url('./assets/fonts/akatab-v9-latin-600.woff2') format('woff2');
 }
 
 @font-face {
@@ -41,7 +47,7 @@ a {
   font-family: 'Akatab';
   font-style: normal;
   font-weight: 700;
-  src: url('../fonts/akatab-v9-latin-700.woff2') format('woff2');
+  src: url('./assets/fonts/akatab-v9-latin-700.woff2') format('woff2');
 }
 
 @font-face {
@@ -49,7 +55,7 @@ a {
   font-family: 'Akatab';
   font-style: normal;
   font-weight: 800;
-  src: url('../fonts/akatab-v9-latin-800.woff2') format('woff2');
+  src: url('./assets/fonts/akatab-v9-latin-800.woff2') format('woff2');
 }
 
 @font-face {
@@ -57,7 +63,7 @@ a {
   font-family: 'Akatab';
   font-style: normal;
   font-weight: 900;
-  src: url('../fonts/akatab-v9-latin-900.woff2') format('woff2');
+  src: url('./assets/fonts/akatab-v9-latin-900.woff2') format('woff2');
 }
 
 :root {
@@ -81,7 +87,7 @@ a {
 
 body {
     margin: 0;
-    font-family: var(--base-font-type);
+    font-family: "Akatab", sans-serif;
     font-size: var(--base-font-size); 
     display: flex;
     flex-direction: column;
