@@ -9,7 +9,6 @@
 
 html, body {
   width: 100%;
-  /* overflow-x: hidden; */
 }
 
 a {
@@ -67,8 +66,7 @@ a {
 }
 
 :root {
-    /* Farben in unserem Fotogram, mit Variablen arbeiten, damit Farben später einfacher angepasst werden können */
-
+    
     --primary-color: #337ab7; 
     --text-color-black: #222222; 
     --text-color-white: #ffffff;
@@ -77,13 +75,10 @@ a {
     --bg-color-header: #547792;
     --text-color-blue: #213448;
 
-    /* Schriftgrößen */
 
     --base-font-size: 16px;  
     --base-font-type: 'Akatab', sans-serif;
 }
-
-/* Typo & globale Einstellungen */
 
 body {
     margin: 0;
@@ -92,13 +87,12 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    line-height: 1.6; /* Bessere Lesbarkeit */
+    line-height: 1.6;
 }
 
 main {
   min-height: 100vh;
 }
-/* Header & Navigation */
 
 header {
     background-color: var(--bg-color-header);
@@ -110,9 +104,6 @@ header {
   max-width: 1440px;
   margin: 0 auto;
 }
-
-
-/* Footer Style */
 
 footer {
     height: 136px;
@@ -151,7 +142,6 @@ footer {
 
 .social-media-logo {
     height: 32px;
-    /* transition: transform 0.3s ease; */
 }
 
 .social-media-logo:hover {
