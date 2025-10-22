@@ -29,10 +29,40 @@ nav a {
 h1 {
     font-size: 48px;
     color: var(--text-color-blue);
+    font-weight: 900;
 }
 
 h2 {
     color: var(--text-color-blue);
+    text-align: center;
+    line-height: 1.2;
+}
+
+#knowledge {
+    font-size: 1.5em;
+    font-weight: 900;
+    color: var(--primary-color);
+    text-shadow: 
+        0 0 12px rgba(59, 130, 246, 0.7),
+        0 0 24px rgba(59, 130, 246, 0.5),
+        2px 2px 4px rgba(0, 0, 0, 0.2);
+    animation: subtle-pulse 1.5s ease-in-out infinite;
+    letter-spacing: 4px;
+}
+
+@keyframes subtle-pulse {
+    0%, 100% { 
+        text-shadow: 
+            0 0 12px rgba(59, 130, 246, 0.7),
+            0 0 24px rgba(59, 130, 246, 0.5),
+            2px 2px 4px rgba(0, 0, 0, 0.2);
+    }
+    50% { 
+        text-shadow: 
+            0 0 16px rgba(59, 130, 246, 0.9),
+            0 0 32px rgba(59, 130, 246, 0.7),
+            2px 2px 6px rgba(0, 0, 0, 0.3);
+    }
 }
 
 footer {
@@ -117,6 +147,7 @@ footer {
     align-items: center;
     flex-direction: column;
     gap: 24px;
+    padding: 24px 8px 24px 8px;
 
 }
 
@@ -136,13 +167,13 @@ footer {
   padding: 0;
   position: absolute;
   top: 80px;         
-  right: 30px;
+  right: 16px;
 }
 
 .author-row {
-  display: flex !important;
+  display: flex;
   align-items: center;
-  gap: 5px;
+  /* gap: 5px; */
   margin: 0;
   padding: 0;
   flex-wrap: wrap;
@@ -155,6 +186,21 @@ footer {
   
   .card h2 {
     font-size: 16px;
+  }
+}
+
+@media (max-width: 690px) {
+  h1 {
+    text-align: center;
+    font-size: 40px;
+ }
+}
+
+@media (max-width: 540px) {
+  h1 {
+    padding: 24px; 
+    line-height: 1.1;
+
   }
 }
 
@@ -183,7 +229,7 @@ footer {
   }
   
   h1 {
-    font-size: 24px;
+    font-size: 32px;
     word-wrap: break-word;
   }
 }
@@ -201,16 +247,44 @@ nav a {
 }
 
 @media (max-width: 320px) {
+
+  h1 {
+    font-size: 24px;
+  }
+
+  h2 {
+    font-size: 18px;
+    word-break: keep-all;
+    text-align: center;
+  }
+
   .card {
     width: 95%;
     padding: 15px;
   }
   
   .card h2 {
-    font-size: 12px;
+    font-size: 18px;
   }
   
   .card p {
-    font-size: 12px;
+    font-size: 16px;
+  }
+
+  .social-media-logo {
+    height: 24px;
+  }
+
+  .social-media {
+    padding-right: 16px;
+    gap: 4px;
+  }
+
+  .logo-bookstore {
+    padding-left: 16px;
+  }
+
+  a.imprint-link {
+    font-size: 11px;
   }
 }
