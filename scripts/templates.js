@@ -35,10 +35,10 @@ function getHTMLForBooks(indexBooks) {
 								<input class="name-area" type="text" id="name${indexBooks}" placeholder="Dein Name">
 								<textarea class="comment-area" id="comment${indexBooks}" placeholder="Dein Kommentar"></textarea>
 								<button onclick="addComment(${indexBooks})">Kommentar hinzufügen</button>
+								<div id="error${indexBooks}" class="error-message"></div>
   							</li>
 						</ul>
-                    </div>    
-	`;
+                    </div>`;
 }
 
 

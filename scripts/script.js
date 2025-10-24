@@ -47,47 +47,66 @@ function toggleLike(indexBooks) {
 		books[indexBooks].liked = false;
 		books[indexBooks].likes -= 1;
 	}
-
 	let heartImg = document.getElementById(`heart${indexBooks}`);
 	heartImg.src =
 		books[indexBooks].liked === true
 			? "./assets/imgs/heart-filled.png"
 			: "./assets/imgs/heart-empty.png";
-
 	document.getElementById(`likes-count${indexBooks}`).textContent =
-		books[indexBooks].likes;
+	books[indexBooks].likes;
 	
 	localStorage.setItem("books", JSON.stringify(books));
-
 }
 
 function addComment(indexBooks) {
 	let newCommentName = document.getElementById(`name${indexBooks}`).value;
 	let newCommentText = document.getElementById(`comment${indexBooks}`).value;
+	let error = validateComment(newCommentName, newCommentText);
 
-	if (newCommentName.trim() === "" || newCommentText.trim() === "") {
-		alert("Bitte füllen Sie beide Felder aus!");
+	if (error) {
+		renderComments(indexBooks, error);
 		return;
 	}
 
-		let newCommentObject = {
-			"name": newCommentName,
-			"comment": newCommentText
-		};
-		books[indexBooks].comments.unshift(newCommentObject);
+	saveComment(indexBooks, newCommentName, newCommentText);
+	clearCommentInputs(indexBooks);
+	localStorage.setItem("books", JSON.stringify(books));
+	renderComments(indexBooks);
+}
+	
+function validateComment(name, text) {
+	if (name.trim() === "" || text.trim() === "") {
+		return "Bitte füllen Sie beide Felder aus";
+	}
+	return null;
+}
 
-		document.getElementById(`name${indexBooks}`).value = "";
-		document.getElementById(`comment${indexBooks}`).value = "";
+function clearCommentInputs(indexBooks) {
+	document.getElementById(`name${indexBooks}`).value = "";
+	document.getElementById(`comment${indexBooks}`).value = "";
+}
 
-		localStorage.setItem("books", JSON.stringify(books));
+function saveComment(indexBooks, name, text) {
+	let newCommentObject = {
+		"name": name,
+		"comment": text,
+	};
+	books[indexBooks].comments.unshift(newCommentObject);
 
-		let ulRef = document.getElementById(`ul${indexBooks}`);
-		ulRef.innerHTML = `<li class="comment-form">
+}
+
+function renderComments(indexBooks, errorMessage = "") {
+	let ulRef = document.getElementById(`ul${indexBooks}`);
+	ulRef.innerHTML = `<li class="comment-form">
   		<input type="text" id="name${indexBooks}" placeholder="Dein Name">
   		<textarea id="comment${indexBooks}" placeholder="Dein Kommentar"></textarea>
   		<button onclick="addComment(${indexBooks})">Kommentar hinzufügen</button>
-		</li>`;
-		for (let i = 0; i < books[indexBooks].comments.length; i++) {
-			ulRef.innerHTML += getHTMLForComments(indexBooks, i);
+		${errorMessage
+				? `<p class="error" id="error${indexBooks}">${errorMessage}</p>`
+				: `<p class="error" id="error${indexBooks}"></p>`
 		}
-	} 
+		</li>`;
+	for (let i = 0; i < books[indexBooks].comments.length; i++) {
+		ulRef.innerHTML += getHTMLForComments(indexBooks, i);
+	}
+}

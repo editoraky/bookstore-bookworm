@@ -93,7 +93,9 @@ h2 {
 }
 
 footer {
-    background-color: var();
+    height: 136px;
+    width: 100%;
+    background-color: var(--bg-color-footer);
 }
 
 .imprint-link {
@@ -178,6 +180,12 @@ footer {
   background-color: rgba(255, 255, 255, 0.5);
   border-radius: 4px;
   word-wrap: break-word;
+}
+
+.error-message {
+  color: red;
+  font-size: 14px;
+  margin-top: 10px;
 }
 
 .hidden {
@@ -337,9 +345,9 @@ h2 {
   }
 
 .social-media {
-    padding-right: 16px;
-    gap: 4px;
-  }
+    display: flex;
+    gap: 8px;
+}
 
 .logo-bookstore {
     padding-left: 16px;
