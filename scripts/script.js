@@ -67,7 +67,6 @@ function addComment(indexBooks) {
 		renderComments(indexBooks, error);
 		return;
 	}
-
 	saveComment(indexBooks, newCommentName, newCommentText);
 	clearCommentInputs(indexBooks);
 	localStorage.setItem("books", JSON.stringify(books));
@@ -98,8 +97,8 @@ function saveComment(indexBooks, name, text) {
 function renderComments(indexBooks, errorMessage = "") {
 	let ulRef = document.getElementById(`ul${indexBooks}`);
 	ulRef.innerHTML = `<li class="comment-form">
-  		<input type="text" id="name${indexBooks}" placeholder="Dein Name">
-  		<textarea id="comment${indexBooks}" placeholder="Dein Kommentar"></textarea>
+  		<input class="name-area" type="text" id="name${indexBooks}" placeholder="Dein Name">
+  		<textarea class="comment-area" id="comment${indexBooks}" placeholder="Dein Kommentar"></textarea>
   		<button onclick="addComment(${indexBooks})">Kommentar hinzufügen</button>
 		${errorMessage
 				? `<p class="error" id="error${indexBooks}">${errorMessage}</p>`

@@ -39,15 +39,11 @@ h2 {
     line-height: 1.2;
 }
 
-.name-area {
+.comment-area, .name-area {
   width: 100%;
+  box-sizing: border-box;
   padding: 8px;
-}
-
-.comment-area {
-  width: 100%;
-  min-width: 100%;
-  padding: 8px;
+  margin: 5px 0;
 }
 
 .love-creation {
@@ -98,12 +94,41 @@ footer {
     background-color: var(--bg-color-footer);
 }
 
+.social-media {
+    display: flex;
+    gap: 8px;
+    padding-right: 40px;
+}
+
+.logo-social {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 136px;
+}
+
+.logo-bookstore {
+    height: 64px;
+    padding-left: 32px;
+}
+
+.social-media-logo {
+    height: 32px;
+}
+
+.social-media-logo:hover {
+    transform: scale(1.1);
+    color: #b01e39;
+}
+
 .imprint-link {
   box-shadow: inset 0 0 0 0 whitesmoke;
-  color: whitesmoke;
   margin: 0 -.25rem;
   padding: 0 .25rem;
   transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
+  color: var(--text-color-white);
+  text-decoration: none;
 }
 
 .imprint-link:hover {
@@ -182,7 +207,7 @@ footer {
   word-wrap: break-word;
 }
 
-.error-message {
+.error {
   color: red;
   font-size: 14px;
   margin-top: 10px;
@@ -347,6 +372,7 @@ h2 {
 .social-media {
     display: flex;
     gap: 8px;
+    padding-right: 16px;
 }
 
 .logo-bookstore {
